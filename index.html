@@ -23,7 +23,7 @@
                 <input  type="button" class="buttons seven" value="7" onclick="document.calculator.ans.value +='7'">
                 <input type="button" class="buttons eigth" value="8" onclick="document.calculator.ans.value +='8'">
                 <input type="button" class="buttons nine" value="9" onclick="document.calculator.ans.value +='9'">
-                <input type="button" class="buttons del" value="DEL" onclick="del(document.calculator.ans.value)">
+                <input type="button" class="buttons del" value= "DEL" onclick="del(document.calculator.ans.value)">
                 <input type="button" class="buttons four" value="4" onclick="document.calculator.ans.value +='4'">
                 <input type="button" class="buttons five" value="5" onclick="document.calculator.ans.value +='5'">
                 <input type="button" class="buttons six" value="6" onclick="document.calculator.ans.value +='6'">
@@ -50,6 +50,9 @@
             var str = str.substring(0, str.length - 1);
             Number(str);
             document.calculator.ans.value = str;
+        }
+        function autodel (){
+            
         }
     </script>
 </body>

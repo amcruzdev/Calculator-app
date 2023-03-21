@@ -105,32 +105,33 @@ input[type=number]::-webkit-outer-spin-button {
             <div class="space">
             </div>
             <div class="buttons-container">
-                <input  type="button" class="buttons seven" value="7" onclick="document.calculator.ans.value +='7'">
-                <input type="button" class="buttons eigth" value="8" onclick="document.calculator.ans.value +='8'">
-                <input type="button" class="buttons nine" value="9" onclick="document.calculator.ans.value +='9'">
+                <input  type="button" class="buttons seven" value="7" onclick="if(ini == 0) { document.calculator.ans.value +='7'} else {document.calculator.ans.value = '7'; ini=0 } ">
+                <input type="button" class="buttons eigth" value="8" onclick="if(ini == 0) { document.calculator.ans.value +='8'} else {document.calculator.ans.value = '8'; ini=0 } ">
+                <input type="button" class="buttons nine" value="9" onclick="if(ini == 0) { document.calculator.ans.value +='9'} else {document.calculator.ans.value = '9'; ini=0 } ">
                 <input type="button" class="buttons del" value="DEL" onclick="del(document.calculator.ans.value)">
-                <input type="button" class="buttons four" value="4" onclick="document.calculator.ans.value +='4'">
-                <input type="button" class="buttons five" value="5" onclick="document.calculator.ans.value +='5'">
-                <input type="button" class="buttons six" value="6" onclick="document.calculator.ans.value +='6'">
+                <input type="button" class="buttons four" value="4" onclick="if(ini == 0) { document.calculator.ans.value +='4'} else {document.calculator.ans.value = '4'; ini=0 } ">
+                <input type="button" class="buttons five" value="5" onclick="if(ini == 0) { document.calculator.ans.value +='5'} else {document.calculator.ans.value = '5'; ini=0 } ">
+                <input type="button" class="buttons six" value="6" onclick="if(ini == 0) { document.calculator.ans.value +='6'} else {document.calculator.ans.value = '6'; ini=0 } ">
                 <input type="button" class="buttons plus" value="+" onclick="document.calculator.ans.value +='+'">
-                <input type="button" class="buttons one" value="1" onclick="document.calculator.ans.value +='1'">
-                <input type="button" class="buttons two" value="2" onclick="document.calculator.ans.value +='2'">
-                <input type="button" class="buttons three" value="3" onclick="document.calculator.ans.value +='3'">
+                <input type="button" class="buttons one" value="1" onclick="if(ini == 0) { document.calculator.ans.value +='1'} else {document.calculator.ans.value = '1'; ini=0 } ">
+                <input type="button" class="buttons two" value="2" onclick="if(ini == 0) { document.calculator.ans.value +='2'} else {document.calculator.ans.value = '2'; ini=0 } ">
+                <input type="button" class="buttons three" value="3" onclick="if(ini == 0) { document.calculator.ans.value +='3'} else {document.calculator.ans.value = '3'; ini=0 } ">
                 <input type="button" class="buttons minus" value="-" onclick="document.calculator.ans.value +='-'">
                 <input type="button" class="buttons point" value="." onclick="document.calculator.ans.value +='.'">
-                <input type="button" class="buttons zero" value="0" onclick="document.calculator.ans.value +='0'">
+                <input type="button" class="buttons zero" value="0" onclick="if(ini == 0) { document.calculator.ans.value +='0'} else {document.calculator.ans.value = '0'; ini=0 } ">
                 <input type="button" class="buttons slash" value="/" onclick="document.calculator.ans.value +='/'">
                 <input type="button" class="buttons times" value="x" onclick="document.calculator.ans.value +='*'">
                 <input type="button" class="buttons reset" value="RESET" onclick="document.calculator.ans.value =''">
                 <input type="button" class="buttons">
                 <input type="button" class="buttons">
-                <input type="button" class="buttons equal" value="=" onclick="document.calculator.ans.value=eval(document.calculator.ans.value)"> 
+                <input type="button" class="buttons equal" value="=" onclick="document.calculator.ans.value=eval(document.calculator.ans.value); ini = 1; console.log(ini)"> 
             </div> 
             <div class="buttons-special-container">
             </div>
         </div>
     </form>
     <script>
+        var ini;
         function del(str) {
             var str = str.substring(0, str.length - 1);
             Number(str);
